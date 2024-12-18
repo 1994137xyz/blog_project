@@ -1,0 +1,18 @@
+{% extends '_base.html' %}
+
+{% block page_title %} Posts list {% endblock %}
+
+{% block content %}
+    {% for post in posts_list %}
+        {{ post.title }}
+        <br>
+        {{ post.text }}
+        <br>
+        {{ post.datetime_created }}
+        <br>
+        <button>
+            <a href="{% url 'post_detail' post.pk %}">Read More</a>
+        </button>
+        <p>----------</p>
+    {% endfor %}
+{% endblock %}

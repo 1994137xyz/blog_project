@@ -1,0 +1,17 @@
+{% extends '_base.html' %}
+
+{% block page_title %} {{ post.title }} Detail {% endblock %}
+
+{% block content %}
+    <h1>{{ post.title }}</h1>
+    <br>
+    <p>By : {{ post.author }}</p>
+    <br>
+    <p>{{ post.text }}</p>
+    <button>
+         <a href="{% url 'post_update' post.pk %}">Edit</a>
+    </button>
+    <button>
+        <a href="{% url 'post_delete' post.pk %}">Delete</a>
+    </button>
+{% endblock %}
